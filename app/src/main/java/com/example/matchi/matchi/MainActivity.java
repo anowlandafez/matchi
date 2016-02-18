@@ -9,7 +9,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 public class MainActivity extends Activity{
-    String[] userArray = {"Amy","Matt", "Andrei", "Ian", "George"};
+    String[] userArray = {"Amy","Matt", "Andrei", "Ian", "George","Max"};
 
 
     @Override
