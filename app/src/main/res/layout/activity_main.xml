@@ -4,33 +4,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ListActivity" >
+    tools:context=".ListActivity"
+    android:background="#30cec1">
 
-    <FrameLayout android:id="@+id/FrameLayout01"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/InnerRelativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:clickable="false"
+        android:background="#0ab68e">
 
-        <Button android:id="@+id/home_button"
+        <Button
+            android:id="@+id/home"
+            android:layout_alignParentRight="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Home"
-            android:layout_gravity="center|start">
-        </Button>
-
-
-        <Button android:id="@+id/profile_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:clickable="true"
             android:text="Profile"
-            android:layout_gravity="center|end">
+            android:background="#0cb68f">
+        </Button>
+        <Button
+            android:id="@+id/profile"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:text="Home"
+            android:background="#0cb68f">
         </Button>
 
-    </FrameLayout>
 
+    </RelativeLayout>
     <ListView
         android:id="@+id/user_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="#2fcec1">
     </ListView>
+
 
 </LinearLayout>
