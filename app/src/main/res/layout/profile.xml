@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ListActivity"
-    android:background="#30cec1">
+    android:background="#2fcec1">
 
     <RelativeLayout
         android:id="@+id/navigation"
@@ -24,6 +21,7 @@
             android:text="Home"
             android:background="#0cb68f">
         </Button>
+
         <Button
             android:id="@+id/profile"
             android:layout_alignParentRight="true"
@@ -40,17 +38,10 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Welcome, User. Here are your Matches"
-        android:id="@+id/welcome"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Your Profile"
+        android:id="@+id/yourProfile"
         android:layout_gravity="center_horizontal" />
-
-    <ListView
-        android:id="@+id/user_list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#2fcec1">
-    </ListView>
 
 
 </LinearLayout>
