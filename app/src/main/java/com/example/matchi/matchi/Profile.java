@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+//profile page
 public class Profile extends Activity
 {
     Button button;
@@ -24,7 +25,7 @@ public class Profile extends Activity
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, MainActivity.class);
+                Intent intent = new Intent(context, Home.class);
                 startActivity(intent);
 
             }
