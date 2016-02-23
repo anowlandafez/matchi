@@ -1,4 +1,4 @@
-public class Matchlist
+public class MatchList
 {
 	//Make match buttons bleuh
 
