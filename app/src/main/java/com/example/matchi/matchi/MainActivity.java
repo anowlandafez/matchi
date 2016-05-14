@@ -43,15 +43,19 @@ public class MainActivity extends Activity{
                         @Override
                         public void onCompleted(JSONObject jsonObject, GraphResponse response) {
                             try {
-                                profile.profileUser.setId(jsonObject.getString("id"));
-                                profile.profileUser.setLName(jsonObject.getString("last_name"));
-                                profile.profileUser.setFName(jsonObject.getString("first_name"));
+                                String id = jsonObject.getString("id");
+                                String name = jsonObject.getString("name");
+                                System.out.println(id + name);
                             }
                             catch (org.json.JSONException e){
                             }
                         }
                     })
                 );
+                Bundle parameters = new Bundle();
+                parameters.putString("fields", "id,name,email,gender, birthday,link");
+
+
                 batch.addCallback(new GraphRequestBatch.Callback() {
                     @Override
                     public void onBatchCompleted(GraphRequestBatch graphRequests) {}
