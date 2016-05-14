@@ -11,6 +11,8 @@ import android.widget.Button;
 public class Profile extends Activity
 {
     Button button;
+    public User profileUser;
+
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
