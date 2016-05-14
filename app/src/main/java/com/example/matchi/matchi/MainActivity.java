@@ -22,7 +22,7 @@ public class MainActivity extends Activity{
     private CallbackManager callbackManager;
     private Profile profile;
     private AccessToken access_token;
-
+    public static User user = new User("Barry", "");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,9 +43,10 @@ public class MainActivity extends Activity{
                         @Override
                         public void onCompleted(JSONObject jsonObject, GraphResponse response) {
                             try {
-                                String id = jsonObject.getString("id");
-                                String name = jsonObject.getString("name");
-                                System.out.println(id + name);
+                                String facebookID = jsonObject.getString("id");
+                                String facebookName = jsonObject.getString("name");
+                                System.out.println(facebookID + facebookName);
+                                user = new User(facebookName,facebookID);
                             }
                             catch (org.json.JSONException e){
                             }
@@ -79,6 +80,8 @@ public class MainActivity extends Activity{
         super.onActivityResult(requestCode, resultCode, data);
         callbackManager.onActivityResult(requestCode, resultCode, data);
     }
+
+
 
 
 

@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2fcec1">
+    android:background="#b84daab9">
 
     <RelativeLayout
         android:id="@+id/navigation"
@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:clickable="false"
-        android:background="#0ab68e">
+        android:background="#b84daab9">
 
         <Button
             android:id="@+id/home"
@@ -36,11 +36,11 @@
     </RelativeLayout>
 
     <TextView
+        android:id="@+id/facebookName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Your Profile"
-        android:id="@+id/yourProfile"
+        android:text="blah"
         android:layout_gravity="center_horizontal" />
 
 
