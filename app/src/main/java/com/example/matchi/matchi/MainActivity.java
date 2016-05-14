@@ -19,6 +19,10 @@ import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 
 
+
+
+
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -43,9 +47,6 @@ public class MainActivity extends Activity{
     private TextView info;
     private LoginButton loginButton;
     private CallbackManager callbackManager;
-
-    public static final String mAPP_ID = "194243607597864";
-    Facebook mFacebook= new Facebook(mAPP_ID);
     private Profile profile;
 
     @Override
@@ -61,26 +62,26 @@ public class MainActivity extends Activity{
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-
-                if(!mFacebook.isSessionValid() ) {
-                    mFacebook.authorize(LoginPage.this, new String[] {"publish_stream","email","user_groups","read_stream","user_about_me","offline_access"},Facebook.FORCE_DIALOG_AUTH, new LoginDialogListener());
+                private void getUserData(Session session, SessionState state){
+                    if (state.isOpened()) {
+                        Request.newMeRequest(session, new Request.GraphUserCallback() {
+                            @Override
+                            public void onCompleted(GraphUser user, Response response) {
+                                if (response != null) {
+                                    try {
+                                        profile.profileUser.setId((String) user.getProperty("id"));
+                                        profile.profileUser.setLName((String) user.getProperty("last_name"));
+                                        profile.profileUser.setFName((String) user.getProperty("first_name"));
+                                    }
+                                    catch (Exception e) {
+                                        e.printStackTrace();
+                                        Log.d(LOG_TAG, "Exception e");
+                                    }
+                                }
+                            }
+                        }).executeAsync();
+                    }
                 }
-                else {
-                    try {
-                        JSONObject json = Util.parseJson(mFacebook.request("me"));
-                        profile.profileUser.setId(json.getString("id"));
-                        profile.profileUser.setLName(json.getString("last_name"));
-                        profile.profileUser.setFName(json.getString("first_name"));
-                    }
-                    catch (Exception e){
-                        Toast.makeText( LoginActivity.this,"Exception FB "+e.toString(), Toast.LENGTH_SHORT).show();
-                    }
-                    catch( FacebookError error ) {
-                        Toast.makeText( LoginPage.this,error.toString(), Toast.LENGTH_SHORT).show();
-                    }
-
-                Intent intent = new Intent(context, Home.class);
-                startActivity(intent);
             }
             @Override
             public void onCancel() {
