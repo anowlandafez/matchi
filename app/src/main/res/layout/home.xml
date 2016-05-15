@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ListActivity"
-    android:background="#30cec1">
+    android:background="#b84daab9">
 
     <RelativeLayout
         android:id="@+id/navigation"
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:clickable="false"
-        android:background="#0ab68e">
+        android:background="#b84daab9">
 
         <Button
             android:id="@+id/home"
@@ -41,15 +41,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Welcome, User. Here are your Matches"
-        android:id="@+id/welcome"
+        android:text="blah"
+        android:id="@+id/facebookName"
         android:layout_gravity="center_horizontal" />
 
     <ListView
         android:id="@+id/user_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#2fcec1">
+        android:background="#b84daab9">
     </ListView>
 
 

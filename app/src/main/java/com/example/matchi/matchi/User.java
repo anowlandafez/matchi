@@ -1,36 +1,23 @@
 package com.example.matchi.matchi;
 
 public class User {
-    private String first_name;
-    private String last_name;
-    private String id;
+    private String facebookName;
+    private String facebookID;
 
 
-    public User (){
-    }
-
-    public void setFName(String fname){
-        first_name = fname;
-    }
-
-    public void setLName(String lname){
-        last_name = lname;
-    }
-
-    public void setId(String fbid){
-        id = fbid;
+    public User (String facebookName, String facebookID){
+        this.facebookName = facebookName;
+        this.facebookID = facebookID;
     }
 
     public String getId(){
-        return id;
+        return facebookID;
     }
 
-    public String getFName(){
-        return first_name;
+    public String getName(){
+        return facebookName;
     }
 
-    public String getLName(){
-        return last_name;
-    }
+
 
 }

@@ -6,19 +6,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 //profile page
 public class Profile extends Activity
 {
     Button button;
-    public User profileUser;
-
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile);
-
+        TextView facebookName = (TextView)findViewById(R.id.facebookName);
+        String name = MainActivity.user.getName();
+        facebookName.setText(name);
         openHomePage();
     }
     public void openHomePage() {
